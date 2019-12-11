@@ -1,5 +1,6 @@
 package com.database.in28minutes.entity;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "Course")
@@ -19,6 +23,12 @@ public class Course {
 	private Long id;
 	@Column(name = "name", nullable = false)
 	private String name;
+	
+	@UpdateTimestamp // Annotation from HIBERNATE library
+	private LocalDateTime lastUpdatedDate;
+	
+	@CreationTimestamp //Annotation from HIBERNATE library
+	private LocalDateTime createdDate;
 	
 	
 	public Course() {
