@@ -8,12 +8,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
+@NamedQueries(value = { 
+		@NamedQuery(name = "query_to_get_all_courses", 
+				query = "Select  c  From Course c"),	
+		
+		@NamedQuery(name = "query_get_all_courses_using_Typed_Query_And_Class", 
+		query = "select c from Course c"),	
+		
+		@NamedQuery(name = "query_get_100_Step_courses", 
+		query = "Select  c  From Course c where name like '%100 STEPS' ") })
+
 @Table(name = "Course")
 public class Course {
 	
