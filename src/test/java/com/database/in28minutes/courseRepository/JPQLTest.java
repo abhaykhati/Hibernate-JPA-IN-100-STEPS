@@ -46,11 +46,11 @@ public class JPQLTest {
 
 	
 	  @Test public void jpql_where() { 
-	   TypedQuery<Course> query =  em.createQuery("Select  c  From Course c where name like '%100' ", Course.class);
+	   TypedQuery<Course> query =  em.createQuery("Select  c  From Course c where name like '%100 STEPS'", Course.class);
 	  
 	  List<Course> resultList = query.getResultList();
 	  
-	  logger.info("Select  c  From Course c where name like '%100'-> {}",resultList); 
+	  logger.info("Select  c  From Course c where name like '%100 STEPS'-> {}",resultList); 
 	  }
 	 
 	 
