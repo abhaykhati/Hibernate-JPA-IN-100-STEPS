@@ -37,6 +37,7 @@ public class HibernateJpaIn100StepsApplication implements CommandLineRunner {
 		
 		courseRepository.save(new Course("Microservies in 20 steps"));
 		
+		courseRepository.playWithEntityManager();
 	}
 	
 	

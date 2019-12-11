@@ -13,7 +13,7 @@ import com.database.in28minutes.entity.Course;
 public class CourseRepository {
 	
 	@Autowired
-	EntityManager em;
+	private EntityManager em;
 	
 	public Course findByID(Long id) {
 		return em.find(Course.class,id);
@@ -34,6 +34,12 @@ public class CourseRepository {
 		return course;
 	}
 	
+	public void playWithEntityManager() {
+		
+		Course course = new Course("REST WEbservices in 50 steps");
+			em.persist(course);
+			em.flush();
+	}
 	
 	
 }
