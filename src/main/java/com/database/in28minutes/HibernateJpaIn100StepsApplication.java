@@ -7,7 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.database.in28minutes.entity.Course;
 import com.database.in28minutes.repo.CourseRepository;
 import com.database.in28minutes.repo.PersonRepository;
 
@@ -30,14 +29,11 @@ public class HibernateJpaIn100StepsApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		Course findByID = courseRepository.findByID(101L);
-		log.info("couse name ="+ findByID.getName() + "   course ID=  "+ findByID.getId());
 		
-		//courseRepository.deleteCourse(102L);
 		
-		courseRepository.save(new Course("Microservies in 20 steps"));
 		
-		courseRepository.playWithEntityManager();
+		
+		
 	}
 	
 	
