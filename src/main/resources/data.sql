@@ -1,8 +1,17 @@
-INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (101,'JPA IN 50 STEPS',TIMESTAMP );
-INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (102,'HIBERNATE IN 70 STEPS',TIMESTAMP);
-INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (103,'BOOT IN 50 STEPS',TIMESTAMP);
-INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (104,'JAVA IN 100 STEPS',TIMESTAMP);
-INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (105,'SPRING IN 1000 STEPS',TIMESTAMP);
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (101,'JPA IN 50 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP() );
+
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (102,'HIBERNATE IN 70 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date)
+values (103,'BOOT IN 50 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (104,'JAVA IN 100 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (105,'SPRING IN 1000 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 
 
 
