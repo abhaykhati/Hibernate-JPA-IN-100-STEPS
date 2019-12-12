@@ -23,32 +23,40 @@ INSERT INTO Student (id,name,passport_id) values (104,'gopal',204);
 INSERT INTO Student (id,name,passport_id) values (105,'uday',205);
 
 
-INSERT INTO Review (id,rating,description) 
-values (301, 4,'Good Course');
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (11,'JPA IN 50 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP() );
 
-INSERT INTO Review (id,rating,description) 
-values (302, 2,'Average Course');
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (12,'HIBERNATE IN 70 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 
-INSERT INTO Review (id,rating,description) 
-values (303, 3,'SO SO COURSE');
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (13,'BOOT IN 50 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 
-INSERT INTO Review (id,rating,description) 
-values (304, 5,'excellent Course');
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (14,'JAVA IN 100 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 
-INSERT INTO Review (id,rating,description) 
-values (305, 3,'Faltu Course');
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) 
+values (15,'SPRING IN 1000 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 
 
 
---#INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (101,'JPA IN 50 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP() );
---
---INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (102,'HIBERNATE IN 70 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
---
---INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (103,'BOOT IN 50 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
---
---INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (104,'JAVA IN 100 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
---
---INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (105,'SPRING IN 1000 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+INSERT INTO Review (id,rating,description, course_id) 
+values (301, 4,'Good Course',11);
+
+INSERT INTO Review (id,rating,description, course_id) 
+values (302, 2,'Average Course',12);
+
+INSERT INTO Review (id,rating,description, course_id) 
+values (303, 3,'SO SO COURSE',13);
+
+INSERT INTO Review (id,rating,description, course_id) 
+values (304, 5,'excellent Course',14);
+
+INSERT INTO Review (id,rating,description, course_id) 
+values (305, 3,'Faltu Course',15);
+
+
+
 
 
 
