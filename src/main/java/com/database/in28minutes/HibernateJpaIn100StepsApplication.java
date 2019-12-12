@@ -8,18 +8,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.database.in28minutes.repo.CourseRepository;
-import com.database.in28minutes.repo.PersonRepository;
+import com.database.in28minutes.repo.StudentRepository;
 
 @SpringBootApplication
 public class HibernateJpaIn100StepsApplication implements CommandLineRunner {
 	
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired  
-	PersonRepository personRepository;
+	/*
+	 * @Autowired PersonRepository personRepository;
+	 */
 	
 	@Autowired  
 	CourseRepository courseRepository;
+	
+	@Autowired  
+	StudentRepository  studentRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(HibernateJpaIn100StepsApplication.class, args);
@@ -30,14 +34,11 @@ public class HibernateJpaIn100StepsApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		
+		studentRepository.saveStudentWithPassport();
 		
 		
 		
 	}
-	
-	
-	
 	
 
 	/*@Override
