@@ -1,42 +1,41 @@
-INSERT INTO student (id,name) values (101,'abhay');
-
-INSERT INTO student (id,name) values (102,'bhagyashree');
-
-INSERT INTO student (id,name) values (103,'viccky');
-
-INSERT INTO student (id,name) values (104,'gopal');
-
-INSERT INTO student (id,name) values (105,'uday');
+-- select * from student, passport
+-- where student.passport_id = passport.id
+-- 
+-- select s.id,s.name,s.passport_id,p.number as PASS_NUMBER from student s, passport p
+-- where s.passport_id= p.id
 
 
-INSERT INTO passport (id,number) values (201,'Ngp9791');
+-- Passport Insertion must be first because it is child table 
+-- and unless you create a row in child table you can't create
+-- a row in parent table in H2 Database since it is a file database
 
-INSERT INTO passport (id,number) values (202,'Pnp6483');
-
-INSERT INTO passport (id,number) values (203,'Yrt9876');
-
-INSERT INTO passport (id,number) values (204,'Rpb2345');
-
-INSERT INTO passport (id,number) values (205,'Mng8822');
+INSERT INTO Passport (id,number) values (201,'Ngp9791');
+INSERT INTO Passport (id,number) values (202,'Pnp6483');
+INSERT INTO Passport (id,number) values (203,'Yrt9876');
+INSERT INTO Passport (id,number) values (204,'Rpb2345');
+INSERT INTO Passport (id,number) values (205,'Mng8822');
 
 
-INSERT INTO review (id,rating,description) 
+INSERT INTO Student (id,name,passport_id) values (101,'abhay',201);
+INSERT INTO Student (id,name,passport_id) values (102,'bhagyashree',202);
+INSERT INTO Student (id,name,passport_id) values (103,'viccky',203);
+INSERT INTO Student (id,name,passport_id) values (104,'gopal',204);
+INSERT INTO Student (id,name,passport_id) values (105,'uday',205);
+
+
+INSERT INTO Review (id,rating,description) 
 values (301, 4,'Good Course');
 
-
-INSERT INTO review (id,rating,description) 
+INSERT INTO Review (id,rating,description) 
 values (302, 2,'Average Course');
 
-
-INSERT INTO review (id,rating,description) 
+INSERT INTO Review (id,rating,description) 
 values (303, 3,'SO SO COURSE');
 
-
-INSERT INTO review (id,rating,description) 
+INSERT INTO Review (id,rating,description) 
 values (304, 5,'excellent Course');
 
-
-INSERT INTO review (id,rating,description) 
+INSERT INTO Review (id,rating,description) 
 values (305, 3,'Faltu Course');
 
 
