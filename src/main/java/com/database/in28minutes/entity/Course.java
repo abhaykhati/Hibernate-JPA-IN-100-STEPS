@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -48,7 +49,23 @@ public class Course {
 	@CreationTimestamp //Annotation from HIBERNATE library
 	private LocalDateTime createdDate;
 	
+	@ManyToMany(mappedBy = "course")
+	private List<Student> student=new ArrayList<Student>();
 	
+	
+	
+	
+	public List<Student> getListOfStudnets() {
+		return student;
+	}
+
+
+	public void setStudnets(Student Studnet) {
+		student.add(Studnet);
+	}
+	
+
+
 	public Course() {
 		
 	}
