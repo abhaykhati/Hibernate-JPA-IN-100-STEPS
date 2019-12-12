@@ -17,7 +17,7 @@ import com.database.in28minutes.entity.Student;
 import com.database.in28minutes.repo.StudentRepository;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = HibernateJpaIn100StepsApplication.class)
+@SpringBootTest(classes = { HibernateJpaIn100StepsApplication.class})
 
 public class StudentRepositoryTest {
 	private Logger log = LoggerFactory.getLogger(this.getClass());
