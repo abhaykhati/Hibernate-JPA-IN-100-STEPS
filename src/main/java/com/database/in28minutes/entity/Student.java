@@ -1,37 +1,63 @@
 package com.database.in28minutes.entity;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-
-
-@Table(name = "student")
+@Table(name = "Student")
 public class Student {
-	
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue
 	private Long id;
-	
-	@Column(name = "name")
-	private String name;
-	
 
+	@Column(name = "name", nullable = false)
+	private String name;
+
+	@OneToOne(fetch = FetchType.LAZY)
+	private Passport passport;
 	
-	public Student() {
-		
+	@ManyToMany
+	@JoinTable(name = "student_course",
+    joinColumns = @JoinColumn(name = "student_id"),
+    inverseJoinColumns = @JoinColumn(name = "course_id"))
+	private List<Course> course=new ArrayList<Course>();
+
+	public List<Course> getListOfCourses() {
+		return course;
+	}  
+
+	public void setCourse(Course Course) {
+		course.add(Course);
 	}
 
-	public Student(String name) {
-		super();
-		this.name = name;
+	public Student(String string) {
+	}
+
+	public Student() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public Passport getPassport() {
+		return passport;
+	}
+
+	public void setPassport(Passport passport) {
+		this.passport = passport;
 	}
 
 	public String getName() {
@@ -42,32 +68,9 @@ public class Student {
 		this.name = name;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, name);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof Student))
-			return false;
-		Student other = (Student) obj;
-		return Objects.equals(id, other.id) && Objects.equals(name, other.name);
-	}
-
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + "]";
+		return "\n Student [id=" + id + ", name=" + name + "]";
 	}
-	
-	
-	
-	
+
 }
