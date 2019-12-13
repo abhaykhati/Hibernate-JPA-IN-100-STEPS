@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -39,10 +42,22 @@ public class CourseSpringDataJpaRepositoryTest {
 
 	@Test
 	public void SortAllCourses() {
-		
-		log.info("Couse Count=  "+courseDataJpaRepository.count());
-	
-		log.info("All Courses sorted DESC order =  "+courseDataJpaRepository.findAll(Sort.by(Direction.DESC,"name")));
-	
+
+		log.info("Couse Count=  " + courseDataJpaRepository.count());
+
+		log.info(
+				"All Courses sorted DESC order =  " + courseDataJpaRepository.findAll(Sort.by(Direction.DESC, "name")));
+
+	}
+
+	@Test
+	public void paginate_Courses() {
+		PageRequest pageRequest = PageRequest.of(0, 4);
+		Page<Course> firstPage = courseDataJpaRepository.findAll(pageRequest);
+		log.info("Fist PAGE =  " + firstPage.getContent());
+
+		Pageable secondPagable = firstPage.nextPageable();
+		Page<Course> secondPage = courseDataJpaRepository.findAll(secondPagable);
+		log.info("Second Page=   " + secondPage.getContent());
 	}
 }

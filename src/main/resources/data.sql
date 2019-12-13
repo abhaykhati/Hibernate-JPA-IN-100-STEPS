@@ -29,6 +29,12 @@ INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (12,'HIBERN
 INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (13,'BOOT IN 50 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (14,'JAVA IN 100 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (15,'SPRING IN 1000 STEPS',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+--  DUMMY RECORDS TO PAGINATE RESULTS USING SPRING DATA JPA REPOSITORY
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (16,'DUMMY-16',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP() );
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (17,'DUMMY-17',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (19,'DUMMY-19',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (20,'DUMMY-20',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
+INSERT INTO COURSE (ID, NAME,created_date, last_updated_date) values (21,'DUMMY-21',CURRENT_TIMESTAMP(),CURRENT_TIMESTAMP());
 
 -- REVIEW INSERTION
 INSERT INTO Review (id,rating,description, course_id) values (301, 4,'Good Course',11);
