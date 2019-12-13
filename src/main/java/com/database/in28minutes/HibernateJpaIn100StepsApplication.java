@@ -45,14 +45,14 @@ public class HibernateJpaIn100StepsApplication implements CommandLineRunner {
 		
 		
 		employeeRepository.insertEmployee(new PartTimeEmployee("prabhas",new BigDecimal(100))) ;
-		employeeRepository.insertEmployee(new FullTimeEmployee("prabhas",new BigDecimal(50))) ;
+		employeeRepository.insertEmployee(new FullTimeEmployee("vIKAS",new BigDecimal(50))) ;
 		
-		List<Employee> allEmployees = employeeRepository.getAllEmployees();
-		allEmployees.forEach(s -> log.info("list of employees"+ s));
+		/*List<Employee> allEmployees = employeeRepository.getAllEmployees();
+		allEmployees.forEach(s -> log.info("list of employees"+ s));*/
 		
+		log.info("PART TIME EMPLOYEES"+employeeRepository.getPartTimeEmployees());
 		
-		
-		
+		log.info("Full TIME EMPLOYEES"+employeeRepository.getFullTimeEmployee());
 		
 		
 
