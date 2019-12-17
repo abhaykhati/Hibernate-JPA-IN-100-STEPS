@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.database.in28minutes.HibernateJpaIn100StepsApplication;
 import com.database.in28minutes.entity.Course;
-import com.database.in28minutes.entity.Passport;
 import com.database.in28minutes.entity.Student;
 import com.database.in28minutes.repo.StudentRepository;
 

@@ -1,7 +1,5 @@
 package com.database.in28minutes.repo;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
@@ -9,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.database.in28minutes.entity.Course;
-import com.database.in28minutes.entity.Passport;
 import com.database.in28minutes.entity.Student;
 
 @Repository
